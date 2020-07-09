@@ -24,6 +24,10 @@ public class Offer {
     private  Category category = new Category();
 
 
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "supplier_id")
+    private  Supplier supplier = new Supplier();
+
 
     private String picture;
     private boolean delivery;
@@ -107,6 +111,14 @@ public class Offer {
         } else  {
             this.category.setId(10612L);
         }
+    }
+
+    public String getSupplier() {
+        return supplier.getName();
+    }
+
+    public void setSupplier(Long number) {
+        this.supplier.setId(number);
     }
 
     public String getPicture() {
