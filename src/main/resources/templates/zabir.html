@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link  href="static/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"></script>
+</head>
+<body class="container">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+
+    <div>Список сообщений</div>
+    <form method="post" th:action="@{/zabir}">
+         <button class="btn btn-success btn-lg" type="submit">Заполнить</button>
+    </form>
+</nav>
+    <table class="ttable" border="1">
+        <caption>Таблица </caption>
+
+        <style type="text/css">
+            table thead{
+                background: #10e6c6; /* Цвет фона таблицы */
+                color: #000000; /* Цвет текста */
+                font-size: 15px;
+            }
+            td b {
+                background: #327b54; /* Цвет фона ячеек */
+                font-size: 17px;
+            }
+            td span {
+                background: #fb9439; /* Цвет фона ячеек */
+            }
+            td i {
+                background: #fb9439; /* Цвет фона ячеек */
+                font-size: 15px;
+            }
+
+
+            td strong {
+                font-size: 10px;
+                background: #afe5de; /* Цвет фона ячеек */
+            }
+
+
+        </style>
+        <thead class="sticky-top">
+        <tr>
+            <th>Код товара</th>
+            <th>Name</th>
+            <th>Количество в наличии</th>
+            <th>Цена прайс</th>
+
+            <th>Валюта</th>
+            <th>Категория</th>
+            <th>Картинка</th>
+            <th>Возможность доставки</th>
+
+
+            <th>Описание</th>
+            <th>Доступность</th>
+            <th>Параметры</th>
+        </tr>
+        </thead>
+        <div th:each="zabiray : ${zabiray}">
+        <tr class="cells">
+            <td><b th:text="${zabiray.id}"></b></td>
+            <td><b th:text="${zabiray.name}"></b></td>
+            <td><b th:text="${zabiray.stock_quantity}"></b></td>
+            <td><b th:text="${zabiray.price}"></b></td>
+            <td><i th:text="${zabiray.currencyId}"></i></td>
+            <td><i th:text="${zabiray.getCategory()}"></i></td>
+            <td><i th:text="${zabiray.picture}"></i></td>
+            <td><i th:text="${zabiray.delivery}"></i></td>
+            <td><i th:text="${zabiray.description}"></i></td>
+            <td><strong th:text="${zabiray.available}"></strong></td>
+           <td><strong th:text="${zabiray.getParam()}"></strong></td>
+
+        </tr>
+
+        </div>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

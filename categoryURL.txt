@@ -1,0 +1,28 @@
+Category{id=84268493, offers=[], parentId=35866574, nameCategory='Аккумулятор для дрона	'}
+Category{id=6445121, offers=[], parentId=44720119, nameCategory='Кулеры к видеокартам'}
+Category{id=6445124, offers=[], parentId=44720119, nameCategory='Вентиляторы к корпусам'}
+Category{id=6445125, offers=[], parentId=44720119, nameCategory='Кулеры к процессорам'}
+Category{id=5993675, offers=[], parentId=0, nameCategory='Компьютерная техника'}
+Category{id=9762292, offers=[], parentId=0, nameCategory='Телефония, Планшеты, Гаджеты'}
+Category{id=87780156, offers=[], parentId=35866574, nameCategory='Светофильтр для дрона'}
+Category{id=43777531, offers=[], parentId=44720119, nameCategory='Термопасты'}
+Category{id=9762308, offers=[], parentId=44720119, nameCategory='Акссесуары к системам охлаждения'}
+Category{id=68261613, offers=[], parentId=68261548, nameCategory='БАФФЕРЫ'}
+Category{id=68261615, offers=[], parentId=68261548, nameCategory='Denckermann'}
+Category{id=68261641, offers=[], parentId=68261548, nameCategory='Разное'}
+Category{id=68261644, offers=[], parentId=68261548, nameCategory='CoreanParts, Technicks'}
+Category{id=68261548, offers=[], parentId=6157855, nameCategory='ЗАПЧАСТИ'}
+Category{id=6445163, offers=[], parentId=6447050, nameCategory='Модули памяти для компьютера'}
+Category{id=6445166, offers=[], parentId=6447050, nameCategory='Жесткие диски (HDD)'}
+Category{id=6445167, offers=[], parentId=6447050, nameCategory='Системные (материнские) платы'}
+Category{id=6445169, offers=[], parentId=6447050, nameCategory='Процессоры'}
+Category{id=6445170, offers=[], parentId=6447050, nameCategory='Корпуса'}
+Category{id=6445178, offers=[], parentId=6447050, nameCategory='Зарядные устройства ноутбуков'}
+Category{id=44720119, offers=[], parentId=6447050, nameCategory='Вентиляторы/системы охлаждения'}
+Category{id=43752886, offers=[], parentId=35866574, nameCategory='Зарядное устройство для дрона'}
+Category{id=43776949, offers=[], parentId=35866574, nameCategory='Рюкзак для дрона'}
+Category{id=35866574, offers=[], parentId=6157855, nameCategory='Аксессуары к дронам'}
+Category{id=5935488, offers=[], parentId=35866574, nameCategory='Смарт-чехол от солнца'}
+Category{id=6157855, offers=[], parentId=9762292, nameCategory='Квадрокоптеры'}
+Category{id=6447050, offers=[], parentId=5993675, nameCategory='Комплектующие к ПК и Ноутбукам'}
+Category{id=43755089, offers=[], parentId=35866574, nameCategory='Пропеллер для дрона'}

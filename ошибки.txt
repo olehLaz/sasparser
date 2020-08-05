@@ -1,0 +1,137 @@
+Как сравнить два HashMap <String, List <String >> с элементами списка как значения, чтобы проверить, присутствует ли значение в hMap1 в hMap2
+java xml hashmap
+40
+просмотра
+
+3
+ответа
+
+14
+Репутация автора
+
+У меня есть две отдельные карты со списком элементов как значения. Я читаю данные из двух отдельных xml-файлов, чтобы заполнить эти карты. Содержимое карт выглядит так:
+
+    Map<String,List<String>> hMap1 = new HashMap<>();
+    Map<String,List<String>> hMap2 = new HashMap<>();
+
+    hmAP1   key:Bob val[aa,bb,cc,dd,ee]
+            key:Sam val[ss,tt,uu,vv,ww]
+
+    hMap2   key:Dan val[xx,pp,yy,qq,zz]
+            key:Bob val[cc,dd,hh,kk,mm]
+Я хочу сравнить значения в hMap1 и hMap2. В этом случае Bob в hMap1 [cc, dd] имеет значения, похожие на Bob в hMap2 [cc, dd]. Как добавить Bob и соответствующие значения только в новый hMap3. Пожалуйста, не могу показаться, что у меня голова. Вот как я прошел с чтения xml-файлов и добавления в hashMaps:
+
+ public static Map<String,List<String>> checkSimilarValues (File file) throws TransformerException, ParserConfigurationException, SAXException, IOException
+    {
+
+        Map<String, List<String>> hMap = new HashMap<>();
+
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc1 = dBuilder.parse(file);
+       // System.out.println(file.getName());
+        doc1.getDocumentElement().normalize();
+
+        NodeList nList = doc1.getElementsByTagName("class");
+
+        for (int temp = 0; temp < nList.getLength(); temp++) {
+            Node nNode = nList.item(temp);
+
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) nNode;
+
+                // list of include methods
+                NodeList includeMethods = eElement.getElementsByTagName("include");
+
+                for (int count = 0; count < includeMethods.getLength(); count++) {
+                    Node node1 = includeMethods.item(count);
+
+                    if (node1.getNodeType() == node1.ELEMENT_NODE) {
+                        Element methods = (Element) node1;
+
+                        List<String> current =
+                      hMap.get(eElement.getAttribute("name"));
+
+                       // List<String> current2 =
+                      map.get(eElement.getAttribute("name"));
+                        if (current == null) {
+                            current = new ArrayList<String>();
+                            hMap.put(eElement.getAttribute("name"), current);
+                        }
+                       if (!(current.contains(methods.getAttribute("name")))) {
+                            current.add(methods.getAttribute("name"));
+
+                        }
+
+                    }
+                }
+            }
+
+        }
+        return hMap;
+
+    }
+
+     public static void main (String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException
+    {
+        File f1 = new File("sample1.xml");
+        File f2 = new File("sample2.xml");
+
+        Map<String, List<String>> hMap1 = new HashMap<>();
+        Map<String, List<String>> hMap2 = new HashMap<>();
+
+        hMap1 = checkSimilarValues(f1);
+        hMap2 = checkSimilarValues(f2);
+
+        for (String key : hMap1.keySet()) {
+            System.out.println(key);
+
+            for (String string : hMap1.get(key)) {
+                System.out.println(string);
+
+            }
+        }
+
+    }
+sample1.xml
+
+<classes>
+<class name="Bob">
+    <methods>
+        <include name="cc" />
+        <include name="cc" />
+        <include name="hh" />
+        <include name="kk" />
+        <include name="mm" />
+    </methods>
+</class>
+<class name="Dan">
+    <methods>
+        <include name="xx" />
+        <include name="pp" />
+        <include name="yy" />
+        <include name="qq" />
+        <include name="zz" />
+    </methods>
+</class>
+sample2.xml
+
+<classes>
+<class name="Bob">
+    <methods>
+        <include name="aa" />
+        <include name="bb" />
+        <include name="cc" />
+        <include name="dd" />
+        <include name="ee" />
+    </methods>
+</class>
+<class name="Sam">
+    <methods>
+        <include name="ss" />
+        <include name="tt" />
+        <include name="uu" />
+        <include name="vv" />
+        <include name="ww" />
+    </methods>
+</class>

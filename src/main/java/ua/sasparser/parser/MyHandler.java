@@ -48,6 +48,7 @@ public class MyHandler extends DefaultHandler {
 
             if (qName.equalsIgnoreCase("Offer")) {
                 // create a new Employee and put it in Map
+                long suppler_id = -9999L;
                 String id = attributes.getValue("id");
                 String available = attributes.getValue("available");
                 String group_id = attributes.getValue("group_id");
@@ -56,6 +57,7 @@ public class MyHandler extends DefaultHandler {
                 offers.setId(Long.parseLong(id));
                 offers.setAvailable(Boolean.parseBoolean(available));
                 offers.setGroup_id(group_id);
+                offers.setSupplier(suppler_id);
                 // initialize list
                 if (offersList == null)
                     offersList = new ArrayList<>();

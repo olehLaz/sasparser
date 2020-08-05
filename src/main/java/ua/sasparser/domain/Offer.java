@@ -101,6 +101,8 @@ public class Offer {
         this.currencyId = currencyId;
     }
 
+
+
     public String getCategory() {
         return category.getNameCategory();
     }
@@ -109,7 +111,7 @@ public class Offer {
         if(number > 0) {
             this.category.setId(number);
         } else  {
-            this.category.setId(10612L);
+            this.category.setId(68261641L);
         }
     }
 
@@ -118,7 +120,11 @@ public class Offer {
     }
 
     public void setSupplier(Long number) {
-        this.supplier.setId(number);
+        if(number > 0) {
+            this.supplier.setId(number);
+        } else  {
+            this.supplier.setId(-9999L);
+        }
     }
 
     public String getPicture() {

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link  href="static/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"></script>
+</head>
+<body class="container">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+
+    <div>Список сообщений</div>
+    <form method="post" th:action="@{/textile}">
+        <button class="btn btn-success btn-lg" type="submit">Заполнить</button>
+    </form>
+</nav>
+<table class="raz" border="1">
+    <caption>Таблица поставщика  https://yavshoke.ua/</caption>
+
+    <style type="text/css">
+        table {
+            background: #ffffff; /* Цвет фона таблицы */
+            color: #000000; /* Цвет текста */
+            font-size: 12px;
+        }
+        td b {
+            background: #a0dfe0; /* Цвет фона ячеек */
+        }
+        td span {
+            background: #fefffa; /* Цвет фона ячеек */
+        }
+        td i {
+            background: #ffeb05; /* Цвет фона ячеек */
+            font-size: 15px;
+        }
+
+
+        td strong {
+            font-size: 10px;
+            background: #afe5de; /* Цвет фона ячеек */
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        .raz {
+            overflow: auto;  /* добавить полосу прокрутки */
+            height: 10em;
+            border: 1px solid red;
+
+        }
+
+        .raz th {
+            position: sticky;
+            top: 0;
+            background: lightpink;
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            min-height: 2em;
+            background: #fffbf9;
+        }
+
+
+        /*        .table-fixed-head {
+                    width: 100%;
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    height: 100vh;
+                }
+
+                .table-fixed-head th,
+                .table-fixed-head td {
+                    padding: 5px;
+                    text-align: center;
+                    width: 40.333vw;
+                }
+                .table-fixed-head thead tr {
+                    display: block;
+                    position: relative;
+                }
+
+                .table-fixed-head tbody {
+                    display: block;
+                    overflow: auto;
+                    width: 100%;
+                    height: calc(100vh - 30px);
+                }
+
+                .table-fixed-head thead {
+                    background-color: #333;
+                    color: #FDFDFD;
+                }
+
+
+                .table-fixed-head tbody tr:nth-child(even) {
+                    background-color: #DDD;
+                }
+    */
+    </style>
+    <thead>
+    <tr >
+        <th>Код товара</th>
+        <th>Name</th>
+        <th>Картинка</th>
+        <th>Цена прайс</th>
+        <th>Категория</th>
+        <th>URL товара</th>
+        <th>Доступность</th>
+
+
+        <th>Артикул</th>
+        <th>Валюта</th>
+
+
+        <th>Возможность доставки</th>
+
+        <th>Описание</th>
+        <th>Vendor</th>
+        <th>Code</th>
+        <th>Параметры</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="yatextiles : ${yatextiles}">
+        <tr class="cells">
+            <td><b th:text="${yatextiles.id}"></b></td>
+            <td><b th:text="${yatextiles.name}"></b></td>
+            <td><span><a th:href="${yatextiles.picture}">Cсылка</a></span></td>
+            <td><i th:text="${yatextiles.price}"></i></td>
+
+            <td><strong th:text="${yatextiles.getCategory()}"></strong></td>
+            <td><span><a th:href="${yatextiles.url}">URL товара</a></span></td>
+
+            <td><span th:text="${yatextiles.available}"></span></td>
+
+
+
+
+            <td><strong th:text="${yatextiles.vendorCode}"></strong></td>
+            <td><strong th:text="${yatextiles.currencyId}"></strong></td>
+
+
+            <td><strong th:text="${yatextiles.delivery}"></strong></td>
+
+            <td><strong th:text="${yatextiles.description}"></strong></td>
+            <td><strong th:text="${yatextiles.vendor}"></strong></td>
+            <td><strong th:text="${yatextiles.code}"></strong></td>
+            <td><strong th:text="${yatextiles.getParam()}"></strong></td>
+
+        </tr>
+
+    </div>
+    </tbody>
+</table>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
