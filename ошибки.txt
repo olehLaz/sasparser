@@ -1,3 +1,15 @@
+SELECT id, available, code, currency_id, delivery, description, group_id, name, picture, price, url, vendor, vendor_code, category_id, supplier_id
+	FROM parser.offer;
+
+	SELECT count(*) FROM parser.offer;
+
+
+
+
+
+
+
+
 Как сравнить два HashMap <String, List <String >> с элементами списка как значения, чтобы проверить, присутствует ли значение в hMap1 в hMap2
 java xml hashmap
 40
@@ -135,3 +147,61 @@ sample2.xml
         <include name="ww" />
     </methods>
 </class>
+
+Ответы (3)
+1
+плюс
+
+107001
+Репутация автора
+
+Гораздо проще сделать это на уровне XML, используя XSLT (2.0 или выше), а не делать это на уровне Java. Например, вы можете создать документ, который объединяет два входа, поставляемых с использованием
+
+<xsl:variable name="inputs" select="doc('sample1.xml'), doc('sample2.xml')"/>
+
+<xsl:template name="main">
+  <classes>
+    <xsl:for-each-group select="$inputs//class" group-by="@name">
+      <methods>
+        <xsl:for-each select="distinct-values(current-group()/methods/include/@name">
+          <include name="{.}"/>
+        </xsl:for-each>
+      </methods>
+    </xsl:for-each-group>
+  </classes>
+</xsl:template>
+Это дает вам объединение всех элементов «include» для каждого имени. Я не уверен, что это то, о чем вы просите. Было бы проще, если бы вы дали описание на высоком уровне проблемы, которую вы пытаетесь решить, вместо того, чтобы выражать ее в терминах манипуляций с хэш-таблицами Java.
+
+Размещён: 10.11.2018 11:54
+0
+плюса
+
+195
+Репутация автора
+
+Вы можете попробовать следующее:
+
+Map<String, List<String>> resultMap = new HashMap<>();
+for (String k: hMap1.keySet()) {
+  if (!hMap2.containsKey(k)) continue;
+  List<String> list = new ArrayList<>(hMap1.get(k));
+  list.retainAll(hMap2.get(k));
+  resultMap.put(k, list);
+}
+Размещён: 10.11.2018 03:32
+0
+плюса
+
+20928
+Репутация автора
+
+Это очень просто в Java 8. Вы можете транслировать записи обоих карт, элементы фильтров, чей ключ принадлежит обеим картам, и собирать эти записи на новую карту, объединяя значения, пересекая их. В коде:
+
+Map<String, List<String>> hMap3 = Stream.of(hMap1, hMap2)
+    .flatMap(map -> map.entrySet().stream())
+    .filter(e -> hMap1.containsKey(e.getKey()) && hMap2.containsKey(e.getKey()))
+    .collect(Collectors.toMap(
+             Map.Entry::getKey,
+             e -> new ArrayList<>(e.getValue()),
+             (l1, l2) -> { l1.retainAll(l2); return l1; }));
+Размещён: 10.11.2018 03:5
