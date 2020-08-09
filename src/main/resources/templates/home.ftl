@@ -8,6 +8,6 @@
 <body>
 <h1>Welcome!</h1>
 
-<p>Click <a th:href="@{/main}">here</a> to see main page.</p>
+<p>Click <a href="@{/main}">here</a> to see main page.</p>
 </body>
 </html>

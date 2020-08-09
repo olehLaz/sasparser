@@ -26,16 +26,16 @@ public class MainController {
         this.categoryRepository = categoryRepository;
     }
 
-    @GetMapping("/ya") //адрес
+    @GetMapping("/satellite") //адрес
     public String main(Map<String, Object> model) {
     //    Iterable<Offers> offers1 = offerRepository.saveAll(XMLParserSAX.xmlParserSAX());
         Iterable<Offer> offers =  offerRepository.findAll();
         model.put("offers", offers);
 
-        return "ya"; //main.mustache
+        return "satellite"; //main.mustache
     }
 
-    @PostMapping("/ya")
+    @PostMapping("/satellite")
     public String savingOffer() {
         List<Category> categoryList = XMLParserSAX.xmlParserSAXCategory();
 
@@ -46,7 +46,7 @@ public class MainController {
         for (Offer offer : offersList) {
             offerRepository.save(offer);
         }
-        return "/ya";
+        return "/satellite";
     }
 
 
