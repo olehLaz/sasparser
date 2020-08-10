@@ -1,5 +1,7 @@
 package ua.sasparser.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,9 @@ import java.util.List;
 public class Offer {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+
     private Long id_offer;
 
     private boolean available;
@@ -19,12 +24,12 @@ public class Offer {
     private String currencyId;
 
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private  Category category = new Category();
 
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "supplier_id")
     private  Supplier supplier = new Supplier();
 
