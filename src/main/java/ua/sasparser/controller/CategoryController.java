@@ -1,9 +1,5 @@
 package ua.sasparser.controller;
 
-import lombok.extern.log4j.Log4j;
-import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +12,7 @@ import ua.sasparser.domain.Category;
 import ua.sasparser.domain.Offer;
 import ua.sasparser.parser.XMLParserSAX;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class CategoryController {
@@ -54,7 +48,7 @@ public class CategoryController {
         model.addAttribute("offers", offers);
         //   model.addAttribute("zabirays", zabirays);
         //   model.addAttribute("yatextiles", yatextiles);
-        return "category";
+        return "category.ftl";
     }
 
     @PostMapping("/category")
@@ -63,7 +57,7 @@ public class CategoryController {
         for (Category category : categoryList) {
             categoryRepository.save(category);
         }
-        return "/category";
+        return "category.ftl";
     }
 
 

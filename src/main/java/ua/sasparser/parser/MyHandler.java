@@ -54,7 +54,7 @@ public class MyHandler extends DefaultHandler {
                 String group_id = attributes.getValue("group_id");
                 // initialize Offer object and set id attribute
                 offers = new Offer();
-                offers.setId(Long.parseLong(id));
+                offers.setId_offer(Long.parseLong(id));
                 offers.setAvailable(Boolean.parseBoolean(available));
                 offers.setGroup_id(group_id);
                 offers.setSupplier(suppler_id);

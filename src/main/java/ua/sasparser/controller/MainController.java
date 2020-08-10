@@ -37,13 +37,14 @@ public class MainController {
 
     @PostMapping("/satellite")
     public String savingOffer() {
-        List<Category> categoryList = XMLParserSAX.xmlParserSAXCategory();
+     //   List<Category> categoryList = XMLParserSAX.xmlParserSAXCategory();
 
         List<Offer> offersList = XMLParserSAX.xmlParserSAX();
-        for (Category category : categoryList){
-            categoryRepository.save(category);
-        }
+     //   for (Category category : categoryList){
+     //       categoryRepository.save(category);
+     //   }
         for (Offer offer : offersList) {
+
             System.out.println("save -- "  + offer.toString() + " !!!!! ");
             offerRepository.save(offer);
         }

@@ -2597,3 +2597,61 @@ java.lang.NullPointerException: null
 2020-08-10 18:34:31,561 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8082-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-08-10 18:34:31,561 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-08-10 18:34:31,575 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Completed initialization in 14 ms
+2020-08-10 19:19:48,265 INFO ua.sasparser.Application [restartedMain] Starting Application on 2400000841821 with PID 14932 (D:\2020_0107\SASParser\target\classes started by LazovoyOV in D:\2020_0107\SASParser)
+2020-08-10 19:19:48,322 INFO ua.sasparser.Application [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-10 19:19:48,700 INFO org.springframework.boot.devtools.restart.ChangeableUrls [restartedMain] The Class-Path manifest attribute in C:\Users\lazovoyov\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-08-10 19:19:48,701 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-10 19:19:48,701 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-10 19:19:51,275 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-10 19:19:51,436 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 142ms. Found 3 JPA repository interfaces.
+2020-08-10 19:19:52,196 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-10 19:19:53,313 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8082 (http)
+2020-08-10 19:19:53,343 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-10 19:19:53,344 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-08-10 19:19:53,690 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-10 19:19:53,691 INFO org.springframework.web.context.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 4989 ms
+2020-08-10 19:19:54,432 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-10 19:19:54,641 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.10.Final}
+2020-08-10 19:19:55,223 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-10 19:19:55,458 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-10 19:19:55,762 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-10 19:19:55,806 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2020-08-10 19:19:59,200 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-10 19:19:59,214 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-10 19:19:59,286 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-10 19:20:00,712 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-10 19:20:01,004 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-10 19:20:02,080 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8082 (http) with context path ''
+2020-08-10 19:20:02,085 INFO ua.sasparser.Application [restartedMain] Started Application in 15.365 seconds (JVM running for 28.717)
+2020-08-10 19:21:49,204 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8082-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-10 19:21:49,204 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-3] Initializing Servlet 'dispatcherServlet'
+2020-08-10 19:21:49,305 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-3] Completed initialization in 101 ms
+2020-08-10 19:48:55,534 INFO ua.sasparser.Application [restartedMain] Starting Application on 2400000841821 with PID 16164 (D:\2020_0107\SASParser\target\classes started by LazovoyOV in D:\2020_0107\SASParser)
+2020-08-10 19:48:55,543 INFO ua.sasparser.Application [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-10 19:48:55,741 INFO org.springframework.boot.devtools.restart.ChangeableUrls [restartedMain] The Class-Path manifest attribute in C:\Users\lazovoyov\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/lazovoyov/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-08-10 19:48:55,742 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-10 19:48:55,742 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-10 19:49:02,719 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-10 19:49:03,511 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 657ms. Found 3 JPA repository interfaces.
+2020-08-10 19:49:05,938 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-10 19:49:06,690 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8082 (http)
+2020-08-10 19:49:06,705 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-10 19:49:06,706 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-08-10 19:49:06,875 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-10 19:49:06,876 INFO org.springframework.web.context.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 11134 ms
+2020-08-10 19:49:07,428 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-10 19:49:07,633 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.10.Final}
+2020-08-10 19:49:09,044 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-10 19:49:09,325 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-10 19:49:09,761 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-10 19:49:09,857 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2020-08-10 19:49:14,998 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-10 19:49:15,270 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-10 19:49:15,395 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-10 19:49:16,943 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-10 19:49:17,337 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-10 19:49:18,458 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8082 (http) with context path ''
+2020-08-10 19:49:18,464 INFO ua.sasparser.Application [restartedMain] Started Application in 24.96 seconds (JVM running for 31.048)
+2020-08-10 19:49:21,252 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8082-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-10 19:49:21,252 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-08-10 19:49:21,265 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Completed initialization in 13 ms

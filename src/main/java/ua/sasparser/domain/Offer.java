@@ -9,7 +9,7 @@ import java.util.List;
 public class Offer {
 
     @Id
-    private Long id;
+    private Long id_offer;
 
     private boolean available;
     private  String group_id;
@@ -45,12 +45,12 @@ public class Offer {
 
     }
 
-    public Long getId() {
-        return id;
+    public Long getId_offer() {
+        return id_offer;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_offer(Long id_offer) {
+        this.id_offer = id_offer;
     }
 
     public boolean isAvailable() {
@@ -107,8 +107,12 @@ public class Offer {
         return category.getNameCategory();
     }
 
+    public Long getCatByID() {
+        return category.getId();
+    }
+
     public void setCategory(Long number) {
-        if(number > 0) {
+        if(number != null) {
             this.category.setId(number);
         } else  {
             this.category.setId(68261641L);
@@ -189,8 +193,8 @@ public class Offer {
 
     @Override
     public String toString() {
-        return "Offers{" +
-                "id=" + id +
+        return "Offer{" +
+                "id_offer=" + id_offer +
                 ", available=" + available +
                 ", group_id='" + group_id + '\'' +
                 ", url='" + url + '\'' +
@@ -198,6 +202,7 @@ public class Offer {
                 ", vendorCode='" + vendorCode + '\'' +
                 ", currencyId='" + currencyId + '\'' +
                 ", category=" + category +
+                ", supplier=" + supplier +
                 ", picture='" + picture + '\'' +
                 ", delivery=" + delivery +
                 ", name='" + name + '\'' +
@@ -207,5 +212,4 @@ public class Offer {
                 ", param=" + param +
                 '}';
     }
-
 }

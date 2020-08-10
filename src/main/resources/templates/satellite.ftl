@@ -114,7 +114,7 @@
     <tbody>
     <#list offers as offer>
         <tr class="cells">
-            <td><b>${offer.id}</b></td>
+            <td><b>${offer.id_offer}</b></td>
             <td><b>${offer.name}</b></td>
             <td><span><a href="${offer.picture}">Cсылка</a></span></td>
             <td><i>${offer.price}</i></td>
