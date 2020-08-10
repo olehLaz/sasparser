@@ -2,7 +2,7 @@
 <@c.page>
 
     <div>Список сообщений</div>
-    <form method="post" action="@{/ya}">
+    <form method="post" action="/satellite">
         <button class="btn btn-success btn-mg" type="submit">Заполнить</button>
     </form>
 

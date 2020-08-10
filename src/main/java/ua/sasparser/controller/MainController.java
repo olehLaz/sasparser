@@ -44,9 +44,10 @@ public class MainController {
             categoryRepository.save(category);
         }
         for (Offer offer : offersList) {
+            System.out.println("save -- "  + offer.toString() + " !!!!! ");
             offerRepository.save(offer);
         }
-        return "/satellite";
+        return "redirect:/satellite";
     }
 
 
