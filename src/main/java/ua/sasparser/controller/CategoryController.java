@@ -16,10 +16,14 @@ import java.util.List;
 
 @Controller
 public class CategoryController {
-    @Autowired
-    private CategoryRepository categoryRepository;
-    @Autowired
-    private OfferRepository offerRepository;
+    private final CategoryRepository categoryRepository;
+    private final OfferRepository offerRepository;
+
+    public CategoryController(CategoryRepository categoryRepository, OfferRepository offerRepository) {
+        this.categoryRepository = categoryRepository;
+        this.offerRepository = offerRepository;
+    }
+
     //   @Autowired
     //   private ZabirayRepository zabirayRepository;
     //   @Autowired
@@ -48,16 +52,16 @@ public class CategoryController {
         model.addAttribute("offers", offers);
         //   model.addAttribute("zabirays", zabirays);
         //   model.addAttribute("yatextiles", yatextiles);
-        return "category.ftl";
+        return "category";
     }
 
     @PostMapping("/category")
-    public String savingOffer() {
+    public String savingCategory() {
         List<Category> categoryList = XMLParserSAX.xmlParserSAXCategory();
         for (Category category : categoryList) {
             categoryRepository.save(category);
         }
-        return "category.ftl";
+        return "redirect:/category";
     }
 
 

@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Spring Security Example</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
+
 <h1>Welcome!</h1>
 
 <p>Click <a href="@{/main}">here</a> to see main page.</p>
-</body>
-</html>
+</@c.page>

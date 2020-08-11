@@ -1,44 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <!-- Bootstrap CSS -->
-      <!-- Custom styles for this template -->
-  <!--  <link  href="static/css/style.css" rel="stylesheet" type="text/css"> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-    <script type="text/javascript"></script>
-</head>
-<body>
-
-    <div id="app">
-        <h2>Список сообщений {{ name }}</h2>
-        <h3> {{ message }}</h3>
-        <form method="post" th:action="@{/category}">
-            <button class="btn btn-success btn-lg" type="submit">Заполнить</button>
-        </form>
-
-
-    <form method="get" th:action="@{/category}">
-     <!--   <input type="text" name="id" th:value="${id}"> -->
-        <input type="text" v-on:input="changeid">
-
-        <button type="submit">Найти</button>
-    </form>
-    </div>
-    <div>Список </div>
-    <div th:each="categories : ${categories}">
-
-            <td><b th:text="${categories.id}"></b></td>
-            <td><b th:text="${categories.nameCategory}"></b></td>
-
-
-    </div>
-
-
+<#import "parts/common.ftl" as c>
+<@c.page>
+    <div>Список катерорий </div>
+    <#list categories as categorie>
+        <ul class="navbar-nav mr-auto">
+        <li>
+            <td><span>${categorie.id}></span></td>
+            <td><i>${categorie.nameCategory}></i></td><p>
+        </li>
+        </ul>
+    </#list>
 
     <table class="raz" border="1">
         <caption>Таблица поставщика  https://yavshoke.ua/</caption>
@@ -137,43 +107,19 @@
         </tr>
         </thead>
         <tbody>
-        <div th:each="offers : ${offers}">
+        <#if offers??>
+        <#list offers as offer>
             <tr class="cells">
-                <td><b th:text="${offers.id} ? ${offers.id} : 0" ></b></td>
-                <td><b th:text="${offers.name}"></b></td>
-                <td><i th:text="${offers.price}"></i></td>
-
+                <td><b><#if offer.id??>${offer.id}<#else>"missing"</#if></b></td>
+                <td><b>${offer.name}></b></td>
+                <td><i>${offer.price}></i></td>
             </tr>
-        </div>
-
-
+        </#list>
+            <#else>
+            <td><b>no date</b></td>
+            <td><b>no date</b></td>
+            <td><b>no date</b></td>
+        </#if>
         </tbody>
     </table>
-
-
-
-
-    <table class="raz" border="1">
-        <caption>Таблица Zabiray</caption>
-    <thead>
-    <tr >
-        <th>Код товара Zabiray</th>
-        <th>Name Zabiray</th>
-        <th>Цена Zabiray</th>
-    </tr>
-    </thead>
-    <tbody>
-    <div th:each="zabirays : ${zabirays}">
-
-        <tr class="cells">
-            <td><b th:text="${zabirays.id}"></b></td>
-            <td><b th:text="${zabirays.name}"></b></td>
-            <td><i th:text="${zabirays.price}"></i></td>
-        </tr>
-    </div>
-    </tbody>
-    </table>
-
-    <script src="/js/main.js"></script>
-</body>
-</html>
+</@c.page>

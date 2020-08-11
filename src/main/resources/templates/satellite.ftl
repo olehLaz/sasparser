@@ -96,6 +96,7 @@
     </style>
     <thead>
     <tr >
+        <th>Дата</th>
         <th>Код товара</th>
         <th>Name</th>
         <th>Картинка</th>
@@ -114,6 +115,7 @@
     <tbody>
     <#list offers as offer>
         <tr class="cells">
+            <td><b>${offer.date}</b></td>
             <td><b>${offer.id_offer}</b></td>
             <td><b>${offer.name}</b></td>
             <td><span><a href="${offer.picture}">Cсылка</a></span></td>

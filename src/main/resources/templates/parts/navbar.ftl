@@ -10,7 +10,10 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/main">Messages</a>
+                <a class="nav-link" href="/category">Список категорий</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/satellite">Список товаров</a>
             </li>
         </ul>
 

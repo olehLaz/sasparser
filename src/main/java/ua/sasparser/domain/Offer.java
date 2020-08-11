@@ -1,9 +1,10 @@
 package ua.sasparser.domain;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -40,6 +41,7 @@ public class Offer {
     private String description;
     private String vendor;
     private long code;
+    private LocalDate date;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "offer_param", joinColumns = @JoinColumn(name = "offer_id"))
@@ -47,6 +49,9 @@ public class Offer {
 
 
     public Offer() {
+        Date dateNow = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        this.date = LocalDate.parse(dateFormat.format(dateNow));
 
     }
 
@@ -196,10 +201,19 @@ public class Offer {
         this.param.add(str);
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Offer{" +
-                "id_offer=" + id_offer +
+                "id=" + id +
+                ", id_offer=" + id_offer +
                 ", available=" + available +
                 ", group_id='" + group_id + '\'' +
                 ", url='" + url + '\'' +
@@ -214,6 +228,7 @@ public class Offer {
                 ", description='" + description + '\'' +
                 ", vendor='" + vendor + '\'' +
                 ", code=" + code +
+                ", date=" + date +
                 ", param=" + param +
                 '}';
     }
