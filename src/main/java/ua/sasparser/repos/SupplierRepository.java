@@ -6,4 +6,5 @@ import ua.sasparser.domain.Supplier;
 
 @Repository
 public interface SupplierRepository extends JpaRepository<Supplier,Long> {
+    Supplier getById(Long id);
 }

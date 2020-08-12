@@ -1,4 +1,5 @@
 <#import "parts/common.ftl" as c>
+<#import "parts/pager.ftl" as p>
 <@c.page>
 
     <div>Список сообщений</div>
@@ -6,6 +7,7 @@
         <button class="btn btn-success btn-mg" type="submit">Заполнить</button>
     </form>
 
+    <@p.pager url page />
   <table class="raz" border="1">
     <caption>Таблица поставщика  https://yavshoke.ua/</caption>
 
@@ -113,7 +115,7 @@
     </tr>
     </thead>
     <tbody>
-    <#list offers as offer>
+    <#list page.content as offer>
         <tr class="cells">
             <td><b>${offer.date}</b></td>
             <td><b>${offer.id_offer}</b></td>
@@ -132,6 +134,7 @@
     </#list>
     </tbody>
 </table>
+    <@p.pager url page />
 
 
 </@c.page>
