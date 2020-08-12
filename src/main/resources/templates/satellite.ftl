@@ -7,7 +7,24 @@
         <button class="btn btn-success btn-mg" type="submit">Заполнить</button>
     </form>
 
-    <@p.pager url page />
+    <@p.pager url suppler nameOffe page />
+
+    <div>
+        <form method="get" action="/satellite">
+            <input type="text" name="suppler">
+            <button type="submit">Найти по поставщику</button>
+        </form>
+    </div>
+
+
+    <div>
+        <form method="get" action="/satellite">
+            <input type="text" name="nameOffe" value="${nameOffe}">
+            <button type="submit">Найти по наименованию</button>
+        </form>
+    </div>
+
+
   <table class="raz" border="1">
     <caption>Таблица поставщика  https://yavshoke.ua/</caption>
 
@@ -134,7 +151,7 @@
     </#list>
     </tbody>
 </table>
-    <@p.pager url page />
+    <@p.pager url suppler nameOffe page />
 
 
 </@c.page>

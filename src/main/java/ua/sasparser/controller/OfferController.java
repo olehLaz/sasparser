@@ -41,15 +41,20 @@ public class OfferController {
     @GetMapping("/satellite") //адрес
     public String main(
             @RequestParam(required = false, defaultValue = "-9999") String  suppler,
+            @RequestParam(required = false, defaultValue = "all") String  nameOffe,
             Model model,
-            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable
+            @PageableDefault(sort = {"name"}, direction = Sort.Direction.DESC) Pageable pageable
         ) {
 
         Long supplerLong = parseLong(String.valueOf(suppler));
         Supplier supplier = supplierRepository.getById(supplerLong);
 
         Page<Offer> page;
-        if(suppler != null ){
+
+        if(!nameOffe.equalsIgnoreCase("all") && !nameOffe.isEmpty() ){
+            page = offerRepository.findByNameContaining(nameOffe, pageable);
+            System.out.println(nameOffe + "      11111111111111111111111111");
+        } else if (suppler != null){
             page = offerRepository.findBySuppliers(supplier, pageable);
         } else {
             page = offerRepository.findAll(pageable);
@@ -58,6 +63,8 @@ public class OfferController {
         model.addAttribute("page", page);
         model.addAttribute("url", "/satellite");
         model.addAttribute("suppler", suppler);
+        model.addAttribute("nameOffe", nameOffe);
+
 
         return "satellite";
     }

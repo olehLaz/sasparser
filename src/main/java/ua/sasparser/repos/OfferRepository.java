@@ -21,8 +21,10 @@ public interface OfferRepository extends CrudRepository<Offer, Long> {
                                Pageable pageable);
 
 
-    @Query("select u from Offer u where u.name LIKE :name")
-    Page<Offer> findByName(@Param("name") String name, Pageable pageable);
+    @Query("select u from Offer u where u.name = :name")
+    Page<Offer> findByNames(@Param("name") String name, Pageable pageable);
+
+    Page<Offer> findByNameContaining(String name, Pageable pageable);
 
 
 
