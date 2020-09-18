@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "offer")
@@ -209,26 +210,40 @@ public class Offer {
         this.date = date;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Offer offer = (Offer) o;
+        return available == offer.available &&
+                Double.compare(offer.price, price) == 0 &&
+                id_offer.equals(offer.id_offer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id_offer, available, price);
+    }
+
     @Override
     public String toString() {
         return "Offer{" +
                 "id=" + id +
                 ", id_offer=" + id_offer +
+                ", date=" + date +
                 ", available=" + available +
                 ", group_id='" + group_id + '\'' +
                 ", url='" + url + '\'' +
                 ", price=" + price +
                 ", vendorCode='" + vendorCode + '\'' +
                 ", currencyId='" + currencyId + '\'' +
-                ", category=" + category +
-                ", supplier=" + supplier +
                 ", picture='" + picture + '\'' +
                 ", delivery=" + delivery +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", vendor='" + vendor + '\'' +
                 ", code=" + code +
-                ", date=" + date +
                 ", param=" + param +
                 '}';
     }
